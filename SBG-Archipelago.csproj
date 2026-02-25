@@ -1,0 +1,538 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <AssemblyName>SBG.Archipelago</AssemblyName>
+        <Product>Super Battle Golf Archipelago</Product>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <RootNamespace>SBG.Archipelago</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.*"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="COPY &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Super Battle Golf\BepInEx\plugins&quot;" />
+    </Target>
+    
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AraTrail-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\AraTrail-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Coffee.UIParticle-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Coffee.UIParticle-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Coffee.UIParticle.R-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Coffee.UIParticle.R-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="com.olegknyazev.softmask-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\com.olegknyazev.softmask-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\DOTween-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween.Modules-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\DOTween.Modules-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Eflatun.SceneReference-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Eflatun.SceneReference-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Facepunch.Steamworks.Win64-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\FMODUnity-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\FMODUnityResonance-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="GameAssembly-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\GameAssembly-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="JBooth.MicroSplat.Core-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\JBooth.MicroSplat.Core-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="kcp2k-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\kcp2k-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Matthias.ProximityChat.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Matthias.ProximityChat.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mirror-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.Authenticators-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mirror.Authenticators-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.BouncyCastle.Cryptography-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mirror.BouncyCastle.Cryptography-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.Components-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mirror.Components-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.Transports-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mirror.Transports-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Mono.Security-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\mscorlib-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\netstandard-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Newtonsoft.Json-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="OpusSharp.Core-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\OpusSharp.Core-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="sc.modeling.splines.runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\sc.modeling.splines.runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="SeppePeelman.EditorTools.SurfaceAlignTool-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\SeppePeelman.EditorTools.SurfaceAlignTool-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedAssembly-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\SharedAssembly-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleWebTransport-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\SimpleWebTransport-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Steam-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Steam-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.ComponentModel.Composition-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Configuration-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Core-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Data-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Data.DataSetExtensions-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Drawing-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.EnterpriseServices-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.IO.Compression-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.IO.Compression.FileSystem-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Hashing-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.IO.Hashing-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Memory-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Net.Http-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Numerics-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Runtime.CompilerServices.Unsafe-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Runtime.Serialization-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Security-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Internals-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.ServiceModel.Internals-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Transactions-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Xml-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\System.Xml.Linq-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Telepathy-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Telepathy-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UniTask-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.Addressables-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UniTask.Addressables-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.DOTween-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UniTask.DOTween-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.Linq-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UniTask.Linq-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UniTask.TextMeshPro-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UniTask.TextMeshPro-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Addressables-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Burst-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Burst.Unsafe-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Collections-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Collections.LowLevel.ILSupport-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.FilmInternalUtilities-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.FilmInternalUtilities-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.InputSystem-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.InputSystem.ForUI-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.013-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.InternalAPIEngineBridge.013-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Localization-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Mathematics-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Center.Common-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Multiplayer.Center.Common-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Postprocessing.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ProBuilder-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Csg-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ProBuilder.Csg-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.KdTree-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ProBuilder.KdTree-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Poly2Tri-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ProBuilder.Poly2Tri-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Stl-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ProBuilder.Stl-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Profiling.Core-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Profiling.Core-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rendering.LightTransport.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Rendering.LightTransport.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.RenderPipelines.Core.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.RenderPipelines.Core.Runtime.Shared-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.RenderPipelines.Core.ShaderLibrary-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.RenderPipelines.GPUDriven.Runtime-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ResourceManager-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.ScriptableBuildPipeline-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Splines-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Splines-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TerrainTools-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.TerrainTools-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.TextMeshPro-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Timeline-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Toonshader-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\Unity.Toonshader-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AccessibilityModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AMDModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AMDModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AndroidJNIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AnimationModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ARModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AssetBundleModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.AudioModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ClothModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ClusterInputModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ClusterRendererModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ContentLoadModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.CoreModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.CrashReportingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.DirectorModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.DSPGraphModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.GameCenterModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.GIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GraphicsStateCollectionSerializerModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.GraphicsStateCollectionSerializerModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.GridModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HierarchyCoreModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.HierarchyCoreModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.HotReloadModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IdentifiersModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.IdentifiersModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ImageConversionModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.IMGUIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputForUIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.InputForUIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.InputLegacyModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.InputModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InsightsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.InsightsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.JSONSerializeModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.LocalizationModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.MarshallingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.MarshallingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.MultiplayerModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.MultiplayerModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.NVIDIAModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ParticleSystemModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.PerformanceReportingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.Physics2DModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.PhysicsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.PropertiesModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ScreenCaptureModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ShaderVariantAnalyticsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.ShaderVariantAnalyticsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.SharedInternalsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.SpriteMaskModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.SpriteShapeModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.StreamingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.SubstanceModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.SubsystemsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TerrainModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TerrainPhysicsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TextCoreFontEngineModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TextCoreTextEngineModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TextRenderingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TilemapModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.TLSModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UI-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UIElementsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UIModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UmbraModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityAnalyticsCommonModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityAnalyticsModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityConnectModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConsentModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityConsentModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityCurlModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityTestProtocolModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityWebRequestAssetBundleModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityWebRequestAudioModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityWebRequestModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityWebRequestTextureModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.UnityWebRequestWWWModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.VehiclesModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.VFXModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.VideoModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.VirtualTexturingModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.VRModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.WindModule-publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule-publicized">
+      <HintPath>C:\\Users\\crois\\Documents\\My Games\\__Archipelagos\\SBG\\src\\pub\\UnityEngine.XRModule-publicized.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
+
+
