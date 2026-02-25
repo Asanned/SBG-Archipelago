@@ -1,3 +1,5 @@
+**This is only a file for ideas for now, i'll put an actual readme here later**
+
 Legend: text in *italic* is for later
 # Goal
 Option, either:
